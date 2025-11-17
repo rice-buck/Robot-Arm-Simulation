@@ -1,8 +1,8 @@
 #include <cmath>
 #include <iostream>
+#include "Vector.hpp"
 
-
-using FormulaFunc = std::function<double()>;
+#pragma once
 
 class Matrix3x3{
 private:
@@ -16,18 +16,10 @@ public:
 
     Vector3 operator*(const Vector3& v) const;
 
+    Matrix3x3 operator*(const Matrix3x3& other) const;
+
+
     friend std::ostream& operator<<(std::ostream& os, const Matrix3x3& m);
 
 };
 
-class Vector3{
-    public:
-    double data[3];
-
-    //constructors
-    Vector3();
-    Vector3(float x, float y, float z);
-
-    friend std::ostream& operator<<(std::ostream& os, const Vector3& v);
-    
-};

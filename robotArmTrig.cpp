@@ -34,7 +34,7 @@ int main(){
     float L2 = 75;
     float L3 = 50;
 
-    float theta1 = 30 * (M_PI / 180.0);
+    float theta1 = 30;
     float theta2 = -20 * (M_PI / 180.0);
     float theta3 = 45 * (M_PI / 180.0);
 

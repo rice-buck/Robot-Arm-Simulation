@@ -3,7 +3,7 @@ CXXFLAGS = -std=c++17 -I/opt/homebrew/Cellar/sfml/3.0.2/include
 LDFLAGS = -L/opt/homebrew/Cellar/sfml/3.0.2/lib \
           -lsfml-graphics -lsfml-window -lsfml-system
 
-SRC = robotArm.cpp
+SRC = robotArmMatrix.cpp Matrix.cpp Vector.cpp
 OUT = app
 
 all: $(OUT)
