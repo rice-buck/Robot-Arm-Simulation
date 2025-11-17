@@ -29,7 +29,16 @@ int main(){
     sf::RectangleShape line3;
     line3.setFillColor(sf::Color(0, 170, 255));
 
+    //lengths and angles
+    float L1 = 100;
+    float L2 = 75;
+    float L3 = 50;
 
+    float theta1 = 30 * (M_PI / 180.0);
+    float theta2 = -20 * (M_PI / 180.0);
+    float theta3 = 45 * (M_PI / 180.0);
+
+    
 //events
     while (window.isOpen()){    
          while (std::optional event = window.pollEvent())
@@ -47,8 +56,25 @@ int main(){
         window.setView(sf::View(visibleArea));
     }
 }
-          
-
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Q)){
+        theta1 += 0.001f;
+        //std::cout << "Theta 1: " << theta1 * (180.0 / M_PI) << "\n";
+    }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W)){
+        theta1 -= 0.001f;
+    }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A)){
+        theta2 += 0.001f;
+    }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S)){
+        theta2 -= 0.001f;
+    }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Z)){
+        theta3 += 0.001f;
+    }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::X)){
+        theta3 -= 0.001f;
+    }
 
         //size of window    
         float window_w = static_cast<float>(window.getSize().x);
@@ -88,14 +114,6 @@ int main(){
 
         line3.setSize({100.f, width});
         line3.setOrigin({0.f, width/2});
-
-            //lengths and angles
-            float L1 = 100;
-            float L2 = 75;
-            float L3 = 50;
-            float theta1 = 30 * (M_PI / 180.0);
-            float theta2 = -20 * (M_PI / 180.0);
-            float theta3 = 45 * (M_PI / 180.0);
 
             //draw dots
             float p0x = 400.f;
