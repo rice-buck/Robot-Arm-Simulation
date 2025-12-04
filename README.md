@@ -9,7 +9,9 @@ The simulation is rendered using the **SFML (Simple and Fast Multimedia Library)
 
 ##  Demo
 
-<img width="802" height="375" alt="Screenshot 2025-12-03 at 2 56 18 PM" src="https://github.com/user-attachments/assets/9017aaf6-8fa7-43a0-b26d-0d50e35703cd" />
+<img width="802" height="513" alt="Screenshot 2025-12-03 at 10 29 55 PM" src="https://github.com/user-attachments/assets/57c26c9b-7671-4ccb-baf5-ea8164afb79f" />
+
+
 
 ---
 
