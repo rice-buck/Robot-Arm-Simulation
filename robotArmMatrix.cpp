@@ -44,7 +44,7 @@ int main(){
     d3.setOutlineColor(sf::Color(255, 165, 0)); 
     d3.setOutlineThickness(-5.f); 
 
-    //plot point
+    //plot point to test inverse kinematics 
     sf::CircleShape point;
     point.setFillColor(sf::Color(255, 0, 0));
 
@@ -79,9 +79,9 @@ int main(){
     float L2 = 75;
     float L3 = 50;
 
-    float theta1 = -12.4 * (M_PI / 180.0);
-    float theta2 = 85.12 * (M_PI / 180.0);
-    float theta3 = 17.29 * (M_PI / 180.0);
+    float theta1 = 110 * (M_PI / 180.0);
+    float theta2 = 56 * (M_PI / 180.0);
+    float theta3 = 13 * (M_PI / 180.0);
 
     //load font for text
     sf::Font font("/Users/rhysbuckeye/Library/Fonts/DS-DIGIT.TTF");
@@ -96,29 +96,55 @@ int main(){
         window.close();
     }
 
-}
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Q)){
-        theta1 += 0.0001f;
+}   
+    //quicker movement
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Q)){
+        theta1 += 0.00015f;
         std::cout << "Theta 1: " << theta1 * (180.0 / M_PI) << "\n";
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W)){
-        theta1 -= 0.0001f;
+        theta1 -= 0.00015f;
         std::cout << "Theta 1: " << theta1 * (180.0 / M_PI) << "\n";
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A)){
-        theta2 += 0.0001f;
+        theta2 += 0.00015f;
         std::cout << "Theta 2: " << theta2 * (180.0 / M_PI) << "\n";
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S)){
-        theta2 -= 0.0001f;
+        theta2 -= 0.00015f;
         std::cout << "Theta 2: " << theta2 * (180.0 / M_PI) << "\n";
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Z)){
-        theta3 += 0.0001f;
+        theta3 += 0.00015f;
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::X)){
-        theta3 -= 0.0001f;
+        theta3 -= 0.00015f;
     }
+
+    //for more precise movement
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::E)){
+        theta1 += 0.00003f;
+        std::cout << "Theta 1: " << theta1 * (180.0 / M_PI) << "\n";
+    }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::R)){
+        theta1 -= 0.00003f;
+        std::cout << "Theta 1: " << theta1 * (180.0 / M_PI) << "\n";
+    }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D)){
+        theta2 += 0.00003f;
+        std::cout << "Theta 2: " << theta2 * (180.0 / M_PI) << "\n";
+    }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::F)){
+        theta2 -= 0.00003f;
+        std::cout << "Theta 2: " << theta2 * (180.0 / M_PI) << "\n";
+    }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::C)){
+        theta3 += 0.00003f;
+    }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::V)){
+        theta3 -= 0.00003f;
+    }
+
 
     //create text for joint angles display
     sf::Text jointAngleOneTxt(font, "", 20);
